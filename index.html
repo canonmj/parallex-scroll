@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="stars.png" id="stars" alt="" />
+      <img src="moon.png" id="moon" alt="" />
+      <img src="mountains_behind.png" id="mountains_behind" alt="" />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img src="mountains_front.png" id="mountains_front" alt="" />
+    </section>
+    <div class="sec" id="sec">
+      <h2>Parallax Scrolling Effets</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel eros blandit arcu posuere blandit ut ut
+        arcu. Proin egestas convallis viverra. Vivamus pharetra imperdiet purus, at dapibus sem commodo ut. Morbi in
+        nunc magna. Cras vulputate ac odio sed lacinia. Integer suscipit tincidunt metus et varius. Phasellus auctor
+        metus at nunc commodo porttitor. Suspendisse sollicitudin arcu interdum ligula aliquam imperdiet. Proin et
+        tortor purus. Suspendisse laoreet sapien a feugiat semper.
+        <br />
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel eros blandit arcu posuere blandit ut ut
+        arcu. Proin egestas convallis viverra. Vivamus pharetra imperdiet purus, at dapibus sem commodo ut. Morbi in
+        nunc magna. Cras vulputate ac odio sed lacinia. Integer suscipit tincidunt metus et varius.
+        <br />
+        <br />
+        Curabitur euismod facilisis tincidunt. Aliquam malesuada ligula ac lorem congue, eget elementum justo posuere.
+        Quisque porttitor, risus vel feugiat tempor, quam leo pharetra magna, a interdum magna eros vel sem.
+        Pellentesque arcu risus, vulputate at risus non, viverra gravida est. Integer egestas nulla sit amet orci
+        gravida dictum. Duis sit amet nisl quis nisl rhoncus pharetra ut quis nulla.
+        <br />
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel eros blandit arcu posuere blandit ut ut
+        arcu. Proin egestas convallis viverra. Vivamus pharetra imperdiet purus, at dapibus sem commodo ut. Morbi in
+        nunc magna. Cras vulputate ac odio sed lacinia. Integer suscipit tincidunt metus et varius.
+      </p>
+    </div>
+
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 0.8 + "px";
+        mountains_behind.style.top = value * 0.4 + "px";
+        text.style.marginRight = value * 2 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
